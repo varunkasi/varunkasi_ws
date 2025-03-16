@@ -1,0 +1,9 @@
+source;share/mono16_converter/hook/pythonpath.ps1
+source;share/mono16_converter/hook/pythonpath.dsv
+source;share/mono16_converter/hook/pythonpath.sh
+source;share/mono16_converter/hook/ament_prefix_path.ps1
+source;share/mono16_converter/hook/ament_prefix_path.dsv
+source;share/mono16_converter/hook/ament_prefix_path.sh
+source;../../build/mono16_converter/share/mono16_converter/hook/pythonpath_develop.ps1
+source;../../build/mono16_converter/share/mono16_converter/hook/pythonpath_develop.dsv
+source;../../build/mono16_converter/share/mono16_converter/hook/pythonpath_develop.sh

@@ -1,0 +1,36 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from thermal_calibration_interfaces/msg/CalibrationPoint.msg
+// generated code does not contain a copyright notice
+
+
+module thermal_calibration_interfaces {
+  module msg {
+    @verbatim (language="comment", text=
+      "A single thermal calibration point")
+    struct CalibrationPoint {
+      @verbatim (language="comment", text=
+        "Unique identifier for this point")
+      uint32 id;
+
+      @verbatim (language="comment", text=
+        "X coordinate in the image")
+      uint16 x;
+
+      @verbatim (language="comment", text=
+        "Y coordinate in the image")
+      uint16 y;
+
+      @verbatim (language="comment", text=
+        "Raw thermal sensor value")
+      uint16 raw_value;
+
+      @verbatim (language="comment", text=
+        "Reference temperature in Celsius")
+      float reference_temp;
+
+      @verbatim (language="comment", text=
+        "ISO timestamp when point was captured")
+      string timestamp;
+    };
+  };
+};

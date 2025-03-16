@@ -1,0 +1,33 @@
+running develop
+Removing /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal-radiometric-visualizer.egg-link (link to .)
+running egg_info
+writing ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/PKG-INFO
+writing dependency_links to ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/dependency_links.txt
+writing entry points to ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/entry_points.txt
+writing requirements to ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/requires.txt
+writing top-level names to ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/top_level.txt
+reading manifest file '../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/SOURCES.txt'
+writing manifest file '../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build
+creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib
+creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer
+copying thermal_radiometric_visualizer/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer
+copying thermal_radiometric_visualizer/visualizer.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer
+running install
+running install_lib
+creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer
+copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer
+copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer/visualizer.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer
+byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer/visualizer.py to visualizer.cpython-310.pyc
+running install_data
+copying resource/thermal_radiometric_visualizer -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/share/ament_index/resource_index/packages
+copying package.xml -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/share/thermal_radiometric_visualizer
+copying plugin.xml -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/share/thermal_radiometric_visualizer
+running install_egg_info
+Copying ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info to /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer-0.0.0-py3.10.egg-info
+running install_scripts
+Installing thermal_radiometric_visualizer script to /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/thermal_radiometric_visualizer
+writing list of installed files to '/home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/install.log'

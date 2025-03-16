@@ -1,0 +1,14 @@
+{
+  "package_name": "thermal_calibration_interfaces",
+  "non_idl_tuples": [
+    "/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool/src/thermal_calibration_interfaces:msg/CalibrationPoint.msg",
+    "/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool/src/thermal_calibration_interfaces:msg/CalibrationModel.msg",
+    "/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool/src/thermal_calibration_interfaces:srv/GetRawValue.srv",
+    "/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool/src/thermal_calibration_interfaces:srv/AddCalibrationPoint.srv",
+    "/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool/src/thermal_calibration_interfaces:srv/PerformCalibration.srv",
+    "/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool/src/thermal_calibration_interfaces:srv/ClearCalibrationData.srv",
+    "/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool/src/thermal_calibration_interfaces:srv/RawToTemperature.srv",
+    "/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool/src/thermal_calibration_interfaces:srv/SaveCalibrationModel.srv",
+    "/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool/src/thermal_calibration_interfaces:srv/LoadCalibrationModel.srv"
+  ]
+}

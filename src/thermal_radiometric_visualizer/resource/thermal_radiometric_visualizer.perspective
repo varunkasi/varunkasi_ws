@@ -1,0 +1,21 @@
+{
+  "panels": [
+    {
+      "name": "Thermal Radiometric Visualizer",
+      "type": "thermal_radiometric_visualizer",
+      "geometry": {
+        "x": 0,
+        "y": 0,
+        "width": 800,
+        "height": 600
+      }
+    }
+  ],
+  "layout": {
+    "dock_area": [
+      {
+        "panel": "Thermal Radiometric Visualizer"
+      }
+    ]
+  }
+}

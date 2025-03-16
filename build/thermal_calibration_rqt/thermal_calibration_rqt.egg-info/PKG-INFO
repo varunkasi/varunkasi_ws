@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: thermal-calibration-rqt
+Version: 0.1.0
+Summary: RQT plugin for thermal camera calibration
+Home-page: UNKNOWN
+Maintainer: user
+Maintainer-email: user@example.com
+License: MIT
+Platform: UNKNOWN
+Provides-Extra: test
+
+UNKNOWN
+

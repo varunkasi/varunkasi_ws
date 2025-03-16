@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating mono16_converter.egg-info
+writing mono16_converter.egg-info/PKG-INFO
+writing dependency_links to mono16_converter.egg-info/dependency_links.txt
+writing entry points to mono16_converter.egg-info/entry_points.txt
+writing requirements to mono16_converter.egg-info/requires.txt
+writing top-level names to mono16_converter.egg-info/top_level.txt
+writing manifest file 'mono16_converter.egg-info/SOURCES.txt'
+reading manifest file 'mono16_converter.egg-info/SOURCES.txt'
+writing manifest file 'mono16_converter.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/python3.10/site-packages/mono16-converter.egg-link (link to .)
+Installing mono16_converter script to /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/mono16_converter
+
+Installed /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter
+running symlink_data
+creating /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/ament_index
+creating /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/ament_index/resource_index
+creating /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/ament_index/resource_index/packages
+symbolically linking /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/resource/mono16_converter -> /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/ament_index/resource_index/packages
+symbolically linking /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/package.xml -> /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/mono16_converter

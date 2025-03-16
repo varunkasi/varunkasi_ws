@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/usb_reset_udev.dir/src/usb_reset_udev.cpp.o -o usb_reset_udev  -ludev 

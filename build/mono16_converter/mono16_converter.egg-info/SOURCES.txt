@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+mono16_converter/__init__.py
+mono16_converter/mono16_to_mono8_converter.py
+mono16_converter.egg-info/PKG-INFO
+mono16_converter.egg-info/SOURCES.txt
+mono16_converter.egg-info/dependency_links.txt
+mono16_converter.egg-info/entry_points.txt
+mono16_converter.egg-info/requires.txt
+mono16_converter.egg-info/top_level.txt
+mono16_converter.egg-info/zip-safe
+resource/mono16_converter

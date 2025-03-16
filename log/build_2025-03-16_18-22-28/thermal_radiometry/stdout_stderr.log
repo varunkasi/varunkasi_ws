@@ -1,0 +1,27 @@
+running develop
+running egg_info
+creating thermal_radiometry.egg-info
+writing thermal_radiometry.egg-info/PKG-INFO
+writing dependency_links to thermal_radiometry.egg-info/dependency_links.txt
+writing entry points to thermal_radiometry.egg-info/entry_points.txt
+writing requirements to thermal_radiometry.egg-info/requires.txt
+writing top-level names to thermal_radiometry.egg-info/top_level.txt
+writing manifest file 'thermal_radiometry.egg-info/SOURCES.txt'
+reading manifest file 'thermal_radiometry.egg-info/SOURCES.txt'
+writing manifest file 'thermal_radiometry.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/lib/python3.10/site-packages/thermal-radiometry.egg-link (link to .)
+Installing thermal_calibrator script to /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/bin
+
+Installed /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry
+running symlink_data
+creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/ament_index
+creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/ament_index/resource_index
+creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/ament_index/resource_index/packages
+symbolically linking /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/resource/thermal_radiometry -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/ament_index/resource_index/packages
+symbolically linking /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/package.xml -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry
+creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/launch
+symbolically linking /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/launch/thermal_calibrator_env.launch.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/launch
+symbolically linking /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/launch/thermal_calibrator.launch.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/launch
+creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/config
+symbolically linking /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/config/thermal_calibrator_params.yaml -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/config

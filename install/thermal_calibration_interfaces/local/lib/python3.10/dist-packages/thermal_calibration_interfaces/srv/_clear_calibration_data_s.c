@@ -1,0 +1,1 @@
+/home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_interfaces/rosidl_generator_py/thermal_calibration_interfaces/srv/_clear_calibration_data_s.c

@@ -1,0 +1,3 @@
+[console_scripts]
+mono16_converter = mono16_converter.mono16_to_mono8_converter:main
+

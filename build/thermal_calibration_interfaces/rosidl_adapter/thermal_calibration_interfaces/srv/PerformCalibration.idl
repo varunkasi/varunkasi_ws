@@ -1,0 +1,43 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from thermal_calibration_interfaces/srv/PerformCalibration.srv
+// generated code does not contain a copyright notice
+
+
+module thermal_calibration_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Request")
+    struct PerformCalibration_Request {
+      @verbatim (language="comment", text=
+        "Type of model to use (e.g., \"polynomial\")")
+      string model_type;
+
+      @verbatim (language="comment", text=
+        "Degree of polynomial (if applicable)")
+      int8 degree;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct PerformCalibration_Response {
+      @verbatim (language="comment", text=
+        "Whether the operation was successful")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "Status message")
+      string message;
+
+      @verbatim (language="comment", text=
+        "Calibration model parameters")
+      sequence<float> model_parameters;
+
+      @verbatim (language="comment", text=
+        "R-squared value of the calibration")
+      float r_squared;
+
+      @verbatim (language="comment", text=
+        "Root mean square error in Celsius")
+      float rmse;
+    };
+  };
+};

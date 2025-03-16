@@ -1,0 +1,1 @@
+/home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/launch/thermal_calibrator.launch.py

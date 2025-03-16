@@ -1,0 +1,1 @@
+/home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_interfaces/ament_cmake_environment_hooks/local_setup.sh
