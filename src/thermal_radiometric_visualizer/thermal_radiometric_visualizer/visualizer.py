@@ -5,7 +5,7 @@ from cv_bridge import CvBridge
 from python_qt_binding.QtWidgets import QLabel, QApplication, QPushButton, QVBoxLayout, QWidget, QHBoxLayout, QGridLayout
 from python_qt_binding.QtGui import QPixmap, QImage, QFont, QPainter, QColor, QPen
 from PyQt5.QtCore import Qt, pyqtSignal, QRect, QPoint
-from PyQt5.QtWidgets import QDialog, QSlider, QSizePolicy
+from PyQt5.QtWidgets import QDialog, QSlider, QSizePolicy, QProgressBar, QCheckBox, QMessageBox
 import sys
 import numpy as np
 import cv2
@@ -24,13 +24,13 @@ from rqt_gui_py.plugin import Plugin
 from qt_gui.plugin import Plugin as QtPlugin
 from python_qt_binding import loadUi
 
-# Add a debug statement to verify plugin loading
-logging.basicConfig(level=logging.DEBUG)
-logging.debug("ThermalRadiometricVisualizer plugin is being loaded.")
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger('thermal_visualizer')
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description='Thermal Radiometric Visualizer')
-parser.add_argument('--args', type=str, help='Path to the bag file')
+parser.add_argument('--args', type=str, help='Path to the processed bag directory')
 args, _ = parser.parse_known_args()
 
 class TransparentOverlay(QWidget):
@@ -152,7 +152,7 @@ class SynchronizedMessage:
                     
             return True
         except Exception as e:
-            logging.error(f"Error loading CV images: {e}")
+            logger.error(f"Error loading CV images: {e}")
             return False
     
     def get_display_image(self):
@@ -169,7 +169,7 @@ class SynchronizedMessage:
 
 class ThermalRadiometricVisualizer(Plugin):
     def __init__(self, context):
-        logging.debug("ThermalRadiometricVisualizer rqt plugin constructor called.")
+        logger.info("Initializing ThermalRadiometricVisualizer plugin")
         super().__init__(context)
         
         # Give QObjects reasonable names
@@ -208,11 +208,12 @@ class ThermalRadiometricVisualizer(Plugin):
         
         # Add a message cache to store synchronized messages
         self.message_cache = {}  # Map of timestamp -> SynchronizedMessage
-        self.message_queue = deque(maxlen=100)  # Queue of processed messages
+        self.message_queue = deque(maxlen=1000)  # Queue of processed messages
         self.current_message_index = -1
         self.current_timestamp = None
         self.frame_counter = 0
         self._is_stepping_frame = False
+        self.synchronization_window = 0.01  # 10ms window for synchronization
         
         # Create subscriptions
         self.mono8_subscription = self.node.create_subscription(
@@ -246,11 +247,14 @@ class ThermalRadiometricVisualizer(Plugin):
         self.is_paused = False
         self.radiometric_mode = False
         self.calibrated_image = None
-        self.bag_process = None
         self.current_temperature = None
         self.hover_temperature = None
         self.received_image_count = 0
+        self.received_raw_count = 0
+        self.received_calibrated_count = 0
+        self.received_mono8_count = 0
         self.playback_speed = 1.0
+        self.synced_messages_count = 0
         
         # Check for missing messages timer
         self.check_timer = self.node.create_timer(1.0, self.check_message_status)
@@ -269,11 +273,11 @@ class ThermalRadiometricVisualizer(Plugin):
         # Use the bag file path passed as an argument
         self.bag_file = args.args
         if self.bag_file and os.path.exists(self.bag_file):
-            self.node.get_logger().info(f"Found bag file: {self.bag_file}")
-            # Don't start the bag process here - it's already started in the tmux script
+            self.node.get_logger().info(f"Found bag directory: {self.bag_file}")
+            self.status_label.setText(f"Using bag directory: {self.bag_file}\nWaiting for messages...")
         else:
-            self.node.get_logger().warning(f"Bag file not found: {self.bag_file}")
-            self.image_label.setText(f"Bag file not found: {self.bag_file}\nListening for topics...")
+            self.node.get_logger().warning(f"Bag directory not found: {self.bag_file}")
+            self.image_label.setText(f"Bag directory not found: {self.bag_file}\nListening for topics...")
 
     def create_ui(self):
         # Main layout
@@ -314,11 +318,23 @@ class ThermalRadiometricVisualizer(Plugin):
         self.mode_label = QLabel("Mode: Not initialized")
         self.mode_label.setAlignment(Qt.AlignLeft)
         
+        # Add progress bar for synchronization
+        self.sync_progress = QProgressBar()
+        self.sync_progress.setRange(0, 100)
+        self.sync_progress.setValue(0)
+        self.sync_progress.setFormat("Synchronization: %v%")
+        
+        # Add message counts
+        self.message_counts_label = QLabel("Messages: 0 raw, 0 mono8, 0 calibrated")
+        self.message_counts_label.setAlignment(Qt.AlignLeft)
+        
         # Add labels to info layout
         info_layout.addWidget(self.status_label, 0, 0)
         info_layout.addWidget(self.temp_label, 0, 1)
         info_layout.addWidget(self.hover_temp_label, 1, 1)
         info_layout.addWidget(self.mode_label, 1, 0)
+        info_layout.addWidget(self.sync_progress, 2, 0, 1, 2)
+        info_layout.addWidget(self.message_counts_label, 3, 0, 1, 2)
         
         # Controls layout
         controls_layout = QHBoxLayout()
@@ -334,6 +350,11 @@ class ThermalRadiometricVisualizer(Plugin):
         self.next_button = QPushButton(">>")
         self.next_button.clicked.connect(self.goto_next_frame)
         self.next_button.setFixedWidth(40)
+        
+        # Add radiometric mode checkbox
+        self.radiometric_checkbox = QCheckBox("Radiometric Mode")
+        self.radiometric_checkbox.setChecked(True)
+        self.radiometric_checkbox.stateChanged.connect(self.toggle_radiometric_mode)
         
         # Speed control slider
         self.speed_slider = QSlider(Qt.Horizontal)
@@ -352,6 +373,7 @@ class ThermalRadiometricVisualizer(Plugin):
         controls_layout.addWidget(self.prev_button)
         controls_layout.addWidget(self.pause_button)
         controls_layout.addWidget(self.next_button)
+        controls_layout.addWidget(self.radiometric_checkbox)
         controls_layout.addWidget(self.speed_slider)
         controls_layout.addWidget(self.speed_label)
         
@@ -362,6 +384,21 @@ class ThermalRadiometricVisualizer(Plugin):
         
         # Set the main layout
         self._widget.setLayout(main_layout)
+
+    def toggle_radiometric_mode(self, state):
+        """Toggle radiometric mode for temperature readings"""
+        self.radiometric_mode = (state == Qt.Checked)
+        self.mode_label.setText(f"Mode: {'Radiometric' if self.radiometric_mode else 'Visual only'}")
+        
+        # If turning off radiometric mode, clear temperature displays
+        if not self.radiometric_mode:
+            self.temp_label.setText("Temperature: N/A (Radiometric mode off)")
+            self.hover_temp_label.setText("Hover: N/A")
+        else:
+            # If turning on, update with current selection if available
+            if hasattr(self.overlay, 'last_clicked_pos') and self.overlay.last_clicked_pos and self.calibrated_image is not None:
+                x, y = self.overlay.last_clicked_pos
+                self.on_pixel_clicked(x, y)
 
     def update_playback_speed(self, value):
         """Update playback speed based on slider value"""
@@ -383,6 +420,8 @@ class ThermalRadiometricVisualizer(Plugin):
                 synced_msg = self.message_queue[self.current_message_index]
                 self.display_message(synced_msg)
                 self.node.get_logger().info(f"Displaying previous frame: {self.current_message_index}/{len(self.message_queue)}")
+            else:
+                self.show_notification("Already at first frame")
 
     def goto_next_frame(self):
         """Go to next frame in the message queue"""
@@ -396,13 +435,25 @@ class ThermalRadiometricVisualizer(Plugin):
                 synced_msg = self.message_queue[self.current_message_index]
                 self.display_message(synced_msg)
                 self.node.get_logger().info(f"Displaying next frame: {self.current_message_index}/{len(self.message_queue)}")
+            else:
+                self.show_notification("Already at last frame")
+
+    def show_notification(self, message):
+        """Show a brief notification in the UI"""
+        # Use status label for simple notifications
+        current_text = self.status_label.text()
+        self.status_label.setText(f"{current_text}\n{message}")
+        
+        # Schedule reset of the status message after 2 seconds
+        self.node.create_timer(2.0, lambda: self.status_label.setText(current_text), oneshot=True)
 
     def raw_image_callback(self, msg):
         """Handle raw thermal image directly from the bag file"""
         if self.is_paused and not self._is_stepping_frame:
             return
             
-        # Track received image count
+        # Track received raw count
+        self.received_raw_count += 1
         self.received_image_count += 1
         
         # Store in message cache
@@ -415,12 +466,22 @@ class ThermalRadiometricVisualizer(Plugin):
         self.message_cache[timestamp].set_timestamp(timestamp)
         
         # Only log occasionally to avoid flooding
-        if self.received_image_count == 1 or self.received_image_count % 30 == 0:
-            self.node.get_logger().info(f"Received raw image #{self.received_image_count} from topic: {msg.header.frame_id}")
+        if self.received_raw_count % 50 == 0:
+            self.node.get_logger().info(f"Received raw images: {self.received_raw_count}")
             
-        # Check if this message is complete and ready for processing
-        self.check_and_process_message(timestamp)
+        # Check for matching messages with close timestamps
+        self.find_and_process_sync_messages(timestamp)
+        
+        # Update message counts in UI
+        self.update_message_counts()
 
+    def update_message_counts(self):
+        """Update the message counts display in the UI"""
+        self.message_counts_label.setText(
+            f"Messages: {self.received_raw_count} raw, {self.received_mono8_count} mono8, "
+            f"{self.received_calibrated_count} calibrated, {self.synced_messages_count} synced"
+        )
+    
     def spin_ros(self):
         rclpy.spin(self.node)
     
@@ -428,24 +489,19 @@ class ThermalRadiometricVisualizer(Plugin):
         self.is_paused = not self.is_paused
         self.pause_button.setText("Resume" if self.is_paused else "Pause")
 
-        if self.bag_process and self.bag_process.poll() is None:
-            if self.is_paused:
-                # Pause the bag process using SIGSTOP
-                os.kill(self.bag_process.pid, signal.SIGSTOP)
-                self.node.get_logger().info(f"Paused bag playback at frame {self.frame_counter}")
-                
-                # Update status label with additional information
-                if self.current_timestamp:
-                    self.status_label.setText(f"Paused at Frame: {self.frame_counter} | Timestamp: {self.current_timestamp:.3f}")
-            else:
-                # Resume the bag process using SIGCONT
-                os.kill(self.bag_process.pid, signal.SIGCONT)
-                self.node.get_logger().info(f"Resumed bag playback from frame {self.frame_counter}")
+        # Update status label with additional information
+        if self.current_timestamp:
+            status = "Paused" if self.is_paused else "Playing"
+            self.status_label.setText(f"{status} at Frame: {self.frame_counter} | Timestamp: {self.current_timestamp:.3f}")
+            self.node.get_logger().info(f"{status} at frame {self.frame_counter}")
 
     def mono8_callback(self, msg):
         """Process the mono8 image message"""
         if self.is_paused and not self._is_stepping_frame:
             return
+        
+        # Track received mono8 count
+        self.received_mono8_count += 1
         
         # Store in cache with timestamp as key
         timestamp = msg.header.stamp.sec + msg.header.stamp.nanosec/1e9
@@ -456,13 +512,23 @@ class ThermalRadiometricVisualizer(Plugin):
         self.message_cache[timestamp].mono8_msg = msg
         self.message_cache[timestamp].set_timestamp(timestamp)
         
-        # Check if this message is complete and ready for processing
-        self.check_and_process_message(timestamp)
+        # Only log occasionally
+        if self.received_mono8_count % 50 == 0:
+            self.node.get_logger().info(f"Received mono8 images: {self.received_mono8_count}")
+            
+        # Find matching messages with close timestamps
+        self.find_and_process_sync_messages(timestamp)
+        
+        # Update message counts in UI
+        self.update_message_counts()
 
     def calibrated_callback(self, msg):
         """Process the calibrated image message"""
         if self.is_paused and not self._is_stepping_frame:
             return
+        
+        # Track received calibrated count
+        self.received_calibrated_count += 1
         
         # Store calibrated image for temperature readings
         try:
@@ -474,31 +540,75 @@ class ThermalRadiometricVisualizer(Plugin):
                 
             self.message_cache[timestamp].calibrated_msg = msg
             self.message_cache[timestamp].set_timestamp(timestamp)
-            self.radiometric_mode = True
             
-            # Check if this message is complete and ready for processing
-            self.check_and_process_message(timestamp)
+            # Only log occasionally
+            if self.received_calibrated_count % 50 == 0:
+                self.node.get_logger().info(f"Received calibrated images: {self.received_calibrated_count}")
+                
+            # Enable radiometric mode since we have calibrated data
+            self.radiometric_mode = True
+            self.radiometric_checkbox.setChecked(True)
+            
+            # Find matching messages with close timestamps
+            self.find_and_process_sync_messages(timestamp)
+            
+            # Update message counts in UI
+            self.update_message_counts()
             
         except Exception as e:
             self.node.get_logger().error(f"Failed to process calibrated image: {e}")
             import traceback
             self.node.get_logger().error(traceback.format_exc())
 
-    def check_and_process_message(self, timestamp):
-        """Check if a message is complete and process it if so"""
-        if timestamp in self.message_cache:
-            synced_msg = self.message_cache[timestamp]
-            
-            # If the message is complete (has at least mono8 or raw)
-            if synced_msg.is_complete():
-                # Convert messages to OpenCV images
-                if synced_msg.load_cv_images(self.bridge):
-                    # Add to queue for processing
-                    self.message_queue.append(synced_msg)
-                    self.current_message_index = len(self.message_queue) - 1
+    def find_and_process_sync_messages(self, timestamp):
+        """Find messages with timestamps close to the given one and process them together"""
+        # Look for messages with timestamps within the synchronization window
+        for ts in list(self.message_cache.keys()):
+            if abs(ts - timestamp) <= self.synchronization_window:
+                # Found a potential match
+                synced_msg = self.message_cache[ts]
+                
+                # Check if it has the other required messages
+                raw_found = synced_msg.raw_msg is not None
+                mono8_found = synced_msg.mono8_msg is not None
+                calibrated_found = synced_msg.calibrated_msg is not None
+                
+                # For best results, we want all three message types
+                # But at minimum, we need either mono8 or raw to display something
+                if (raw_found or mono8_found):
+                    # If mono8 is missing but we have raw, we could create mono8 here
+                    if not mono8_found and raw_found:
+                        # The message itself will handle the conversion in load_cv_images
+                        pass
+                    
+                    # Process the synchronized message
+                    if synced_msg.load_cv_images(self.bridge):
+                        # Add to queue if not already added
+                        # Use a flag to check if this timestamp is already in the queue
+                        timestamp_exists = False
+                        for msg in self.message_queue:
+                            if abs(msg.timestamp - ts) < 0.001:  # Within 1ms
+                                timestamp_exists = True
+                                break
+                        
+                        if not timestamp_exists:
+                            self.message_queue.append(synced_msg)
+                            self.current_message_index = len(self.message_queue) - 1
+                            self.synced_messages_count += 1
+                            
+                            # Update synchronization progress
+                            sync_percent = min(100, int(self.synced_messages_count / max(1, self.received_image_count) * 100))
+                            self.sync_progress.setValue(sync_percent)
+                            
+                            # If we have all three message types, highlight this in the UI
+                            if raw_found and mono8_found and calibrated_found:
+                                # Every 50th fully synchronized message, log it
+                                if self.synced_messages_count % 50 == 0:
+                                    self.node.get_logger().info(f"Added fully synchronized message {self.synced_messages_count} (t={ts:.3f})")
                     
                     # Clean up message cache to save memory
-                    self.cleanup_message_cache()
+                    if len(self.message_cache) > 1000:  # Large cache size for better synchronization
+                        self.cleanup_message_cache()
                 
     def process_next_message(self):
         """Process and display the next message in the queue"""
@@ -548,14 +658,24 @@ class ThermalRadiometricVisualizer(Plugin):
             self.calibrated_image = synced_msg.get_calibrated_image()
             
             # Update radiometric mode flag based on whether we have calibrated data
-            self.radiometric_mode = self.calibrated_image is not None
-            
+            if self.calibrated_image is not None:
+                self.radiometric_mode = self.radiometric_checkbox.isChecked()
+            else:
+                self.radiometric_mode = False
+                self.radiometric_checkbox.setChecked(False)
+                
             # Update status label
-            self.status_label.setText(f"Frame: {self.frame_counter} | Timestamp: {synced_msg.timestamp:.3f}")
+            status = "Paused" if self.is_paused else "Playing"
+            self.status_label.setText(f"{status} at Frame: {self.frame_counter} | Timestamp: {synced_msg.timestamp:.3f}")
             self.mode_label.setText(f"Mode: {'Radiometric' if self.radiometric_mode else 'Visual only'}")
             
+            # Update temperature display if we have a clicked position
+            if hasattr(self.overlay, 'last_clicked_pos') and self.overlay.last_clicked_pos and self.radiometric_mode:
+                x, y = self.overlay.last_clicked_pos
+                self.on_pixel_clicked(x, y)
+                
             # Log occasionally
-            if self.frame_counter == 1 or self.frame_counter % 30 == 0:
+            if self.frame_counter % 100 == 0:
                 self.node.get_logger().info(f"Displayed frame {self.frame_counter} (timestamp: {synced_msg.timestamp:.3f})")
                 
         except Exception as e:
@@ -638,7 +758,8 @@ class ThermalRadiometricVisualizer(Plugin):
         raw_count = sum(1 for m in self.message_queue if m.raw_msg is not None)
         
         # Log statistics occasionally
-        self.node.get_logger().info(f"Message queue: {message_count} messages "
+        if self.frame_counter % 200 == 0:
+            self.node.get_logger().info(f"Message queue: {message_count} messages "
                                    f"({mono8_count} mono8, {calibrated_count} calibrated, {raw_count} raw)")
         
         # Check for missing calibrated messages if radiometric mode is expected
@@ -648,7 +769,7 @@ class ThermalRadiometricVisualizer(Plugin):
     def cleanup_message_cache(self):
         """Remove old messages from the cache to save memory"""
         # Keep a reasonable amount of messages in the cache
-        max_cache_size = 200
+        max_cache_size = 1000  # Large cache size
         
         if len(self.message_cache) > max_cache_size:
             # Sort timestamps and remove oldest
@@ -660,9 +781,7 @@ class ThermalRadiometricVisualizer(Plugin):
     
     def shutdown_plugin(self):
         """Clean up resources when the plugin is shut down"""
-        if self.bag_process and self.bag_process.poll() is None:
-            self.bag_process.terminate()
-        logging.debug("ThermalRadiometricVisualizer is shutting down.")
+        self.node.get_logger().info("ThermalRadiometricVisualizer shutting down")
 
 def main(args=None):
     """Main function to run the visualizer as a standalone application"""
