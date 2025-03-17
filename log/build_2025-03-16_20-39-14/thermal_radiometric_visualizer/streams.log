@@ -1,0 +1,38 @@
+[0.913s] Invoking command in '/home/dtc/airlab_ws/varunkasi_ws/src/thermal_radiometric_visualizer': PYTHONPATH=/home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/thermal_radiometric_visualizer build --build-base /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build install --record /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/install.log --single-version-externally-managed install_data
+[1.053s] running egg_info
+[1.055s] creating ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info
+[1.055s] writing ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/PKG-INFO
+[1.055s] writing dependency_links to ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/dependency_links.txt
+[1.055s] writing entry points to ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/entry_points.txt
+[1.055s] writing requirements to ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/requires.txt
+[1.055s] writing top-level names to ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/top_level.txt
+[1.055s] writing manifest file '../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/SOURCES.txt'
+[1.056s] reading manifest file '../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/SOURCES.txt'
+[1.057s] writing manifest file '../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info/SOURCES.txt'
+[1.057s] running build
+[1.057s] running build_py
+[1.057s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build
+[1.057s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib
+[1.057s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer
+[1.057s] copying thermal_radiometric_visualizer/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer
+[1.057s] copying thermal_radiometric_visualizer/visualizer.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer
+[1.057s] running install
+[1.057s] running install_lib
+[1.058s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer
+[1.058s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer
+[1.058s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build/lib/thermal_radiometric_visualizer/visualizer.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer
+[1.058s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer/__init__.py to __init__.cpython-310.pyc
+[1.058s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer/visualizer.py to visualizer.cpython-310.pyc
+[1.059s] running install_data
+[1.060s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/share/ament_index
+[1.060s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/share/ament_index/resource_index
+[1.060s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/share/ament_index/resource_index/packages
+[1.060s] copying resource/thermal_radiometric_visualizer -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/share/ament_index/resource_index/packages
+[1.060s] copying package.xml -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/share/thermal_radiometric_visualizer
+[1.060s] copying plugin.xml -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/share/thermal_radiometric_visualizer
+[1.060s] running install_egg_info
+[1.061s] Copying ../../build/thermal_radiometric_visualizer/thermal_radiometric_visualizer.egg-info to /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages/thermal_radiometric_visualizer-0.0.0-py3.10.egg-info
+[1.062s] running install_scripts
+[1.075s] Installing thermal_radiometric_visualizer script to /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/thermal_radiometric_visualizer
+[1.075s] writing list of installed files to '/home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/install.log'
+[1.100s] Invoked command in '/home/dtc/airlab_ws/varunkasi_ws/src/thermal_radiometric_visualizer' returned '0': PYTHONPATH=/home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometric_visualizer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/thermal_radiometric_visualizer build --build-base /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/build install --record /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometric_visualizer/install.log --single-version-externally-managed install_data

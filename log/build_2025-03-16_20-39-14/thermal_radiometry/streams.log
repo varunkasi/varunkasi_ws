@@ -1,0 +1,42 @@
+[0.881s] Invoking command in '/home/dtc/airlab_ws/varunkasi_ws/src/thermal_radiometry': PYTHONPATH=/home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/thermal_radiometry build --build-base /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/build install --record /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/install.log --single-version-externally-managed install_data
+[1.032s] running egg_info
+[1.032s] creating ../../build/thermal_radiometry/thermal_radiometry.egg-info
+[1.033s] writing ../../build/thermal_radiometry/thermal_radiometry.egg-info/PKG-INFO
+[1.033s] writing dependency_links to ../../build/thermal_radiometry/thermal_radiometry.egg-info/dependency_links.txt
+[1.033s] writing entry points to ../../build/thermal_radiometry/thermal_radiometry.egg-info/entry_points.txt
+[1.033s] writing requirements to ../../build/thermal_radiometry/thermal_radiometry.egg-info/requires.txt
+[1.033s] writing top-level names to ../../build/thermal_radiometry/thermal_radiometry.egg-info/top_level.txt
+[1.033s] writing manifest file '../../build/thermal_radiometry/thermal_radiometry.egg-info/SOURCES.txt'
+[1.034s] reading manifest file '../../build/thermal_radiometry/thermal_radiometry.egg-info/SOURCES.txt'
+[1.034s] writing manifest file '../../build/thermal_radiometry/thermal_radiometry.egg-info/SOURCES.txt'
+[1.034s] running build
+[1.034s] running build_py
+[1.034s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/build
+[1.034s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/build/lib
+[1.035s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/build/lib/thermal_radiometry
+[1.035s] copying thermal_radiometry/thermal_calibrator.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/build/lib/thermal_radiometry
+[1.035s] copying thermal_radiometry/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/build/lib/thermal_radiometry
+[1.035s] running install
+[1.035s] running install_lib
+[1.035s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/lib/python3.10/site-packages/thermal_radiometry
+[1.035s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/build/lib/thermal_radiometry/thermal_calibrator.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/lib/python3.10/site-packages/thermal_radiometry
+[1.035s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/build/lib/thermal_radiometry/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/lib/python3.10/site-packages/thermal_radiometry
+[1.036s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/lib/python3.10/site-packages/thermal_radiometry/thermal_calibrator.py to thermal_calibrator.cpython-310.pyc
+[1.037s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/lib/python3.10/site-packages/thermal_radiometry/__init__.py to __init__.cpython-310.pyc
+[1.038s] running install_data
+[1.038s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/ament_index
+[1.038s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/ament_index/resource_index
+[1.038s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/ament_index/resource_index/packages
+[1.038s] copying resource/thermal_radiometry -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/ament_index/resource_index/packages
+[1.038s] copying package.xml -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry
+[1.038s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/launch
+[1.038s] copying launch/thermal_calibrator_env.launch.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/launch
+[1.038s] copying launch/thermal_calibrator.launch.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/launch
+[1.038s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/config
+[1.038s] copying config/thermal_calibrator_params.yaml -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/share/thermal_radiometry/config
+[1.039s] running install_egg_info
+[1.039s] Copying ../../build/thermal_radiometry/thermal_radiometry.egg-info to /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/lib/python3.10/site-packages/thermal_radiometry-0.0.1-py3.10.egg-info
+[1.040s] running install_scripts
+[1.052s] Installing thermal_calibrator script to /home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/bin
+[1.053s] writing list of installed files to '/home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/install.log'
+[1.078s] Invoked command in '/home/dtc/airlab_ws/varunkasi_ws/src/thermal_radiometry' returned '0': PYTHONPATH=/home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dtc/airlab_ws/varunkasi_ws/install/thermal_radiometry/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/thermal_radiometry build --build-base /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/build install --record /home/dtc/airlab_ws/varunkasi_ws/build/thermal_radiometry/install.log --single-version-externally-managed install_data

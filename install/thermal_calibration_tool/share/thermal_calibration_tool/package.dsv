@@ -1,0 +1,9 @@
+source;share/thermal_calibration_tool/hook/path.ps1
+source;share/thermal_calibration_tool/hook/path.dsv
+source;share/thermal_calibration_tool/hook/path.sh
+source;share/thermal_calibration_tool/hook/pythonpath.ps1
+source;share/thermal_calibration_tool/hook/pythonpath.dsv
+source;share/thermal_calibration_tool/hook/pythonpath.sh
+source;share/thermal_calibration_tool/hook/pythonscriptspath.ps1
+source;share/thermal_calibration_tool/hook/pythonscriptspath.dsv
+source;share/thermal_calibration_tool/hook/pythonscriptspath.sh

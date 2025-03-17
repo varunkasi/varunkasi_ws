@@ -1,0 +1,37 @@
+[0.901s] Invoking command in '/home/dtc/airlab_ws/varunkasi_ws/src/mono16_converter': PYTHONPATH=/home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mono16_converter build --build-base /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/build install --record /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/install.log --single-version-externally-managed install_data
+[1.051s] running egg_info
+[1.053s] creating ../../build/mono16_converter/mono16_converter.egg-info
+[1.053s] writing ../../build/mono16_converter/mono16_converter.egg-info/PKG-INFO
+[1.053s] writing dependency_links to ../../build/mono16_converter/mono16_converter.egg-info/dependency_links.txt
+[1.053s] writing entry points to ../../build/mono16_converter/mono16_converter.egg-info/entry_points.txt
+[1.053s] writing requirements to ../../build/mono16_converter/mono16_converter.egg-info/requires.txt
+[1.053s] writing top-level names to ../../build/mono16_converter/mono16_converter.egg-info/top_level.txt
+[1.053s] writing manifest file '../../build/mono16_converter/mono16_converter.egg-info/SOURCES.txt'
+[1.054s] reading manifest file '../../build/mono16_converter/mono16_converter.egg-info/SOURCES.txt'
+[1.055s] writing manifest file '../../build/mono16_converter/mono16_converter.egg-info/SOURCES.txt'
+[1.055s] running build
+[1.055s] running build_py
+[1.055s] creating /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/build
+[1.055s] creating /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/build/lib
+[1.055s] creating /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/build/lib/mono16_converter
+[1.055s] copying mono16_converter/mono16_to_mono8_converter.py -> /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/build/lib/mono16_converter
+[1.055s] copying mono16_converter/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/build/lib/mono16_converter
+[1.055s] running install
+[1.056s] running install_lib
+[1.056s] creating /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/python3.10/site-packages/mono16_converter
+[1.056s] copying /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/build/lib/mono16_converter/mono16_to_mono8_converter.py -> /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/python3.10/site-packages/mono16_converter
+[1.056s] copying /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/build/lib/mono16_converter/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/python3.10/site-packages/mono16_converter
+[1.056s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/python3.10/site-packages/mono16_converter/mono16_to_mono8_converter.py to mono16_to_mono8_converter.cpython-310.pyc
+[1.058s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/python3.10/site-packages/mono16_converter/__init__.py to __init__.cpython-310.pyc
+[1.058s] running install_data
+[1.058s] creating /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/ament_index
+[1.058s] creating /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/ament_index/resource_index
+[1.058s] creating /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/ament_index/resource_index/packages
+[1.058s] copying resource/mono16_converter -> /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/ament_index/resource_index/packages
+[1.059s] copying package.xml -> /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/share/mono16_converter
+[1.059s] running install_egg_info
+[1.059s] Copying ../../build/mono16_converter/mono16_converter.egg-info to /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/python3.10/site-packages/mono16_converter-0.0.0-py3.10.egg-info
+[1.060s] running install_scripts
+[1.073s] Installing mono16_converter script to /home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/mono16_converter
+[1.073s] writing list of installed files to '/home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/install.log'
+[1.105s] Invoked command in '/home/dtc/airlab_ws/varunkasi_ws/src/mono16_converter' returned '0': PYTHONPATH=/home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dtc/airlab_ws/varunkasi_ws/install/mono16_converter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mono16_converter build --build-base /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/build install --record /home/dtc/airlab_ws/varunkasi_ws/build/mono16_converter/install.log --single-version-externally-managed install_data

@@ -1,1 +1,0 @@
-/home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_interfaces/rosidl_cmake/srv/AddCalibrationPoint_Response.msg

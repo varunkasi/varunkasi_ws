@@ -1,6 +1,0 @@
-
-# Response
-bool success               # Whether the operation was successful
-string message             # Status message
-string model_type          # Type of loaded model
-float32[] model_parameters # Loaded model parameters

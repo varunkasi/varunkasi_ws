@@ -1,1 +1,0 @@
-/home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_interfaces/rosidl_typesupport_introspection_c/thermal_calibration_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h

@@ -1,1 +1,0 @@
-cv_bridge:launch:launch_ros:mono16_converter:python3-matplotlib:python3-numpy:python3-opencv:python3-pyqt5:python3-pyqt5.qtsvg:python3-scipy:rclpy:rqt_gui:rqt_gui_py:sensor_msgs:std_msgs:thermal_calibration_interfaces:tmux:usb_cam

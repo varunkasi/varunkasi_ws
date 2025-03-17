@@ -1,0 +1,112 @@
+[0.646s] Invoking command in '/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool': PYTHONPATH=/home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/thermal_calibration_tool build --build-base /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build install --record /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/install.log --single-version-externally-managed
+[0.802s] running egg_info
+[0.803s] creating ../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info
+[0.803s] writing ../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info/PKG-INFO
+[0.803s] writing dependency_links to ../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info/dependency_links.txt
+[0.803s] writing entry points to ../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info/entry_points.txt
+[0.803s] writing requirements to ../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info/requires.txt
+[0.803s] writing top-level names to ../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info/top_level.txt
+[0.804s] writing manifest file '../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info/SOURCES.txt'
+[0.805s] reading manifest file '../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info/SOURCES.txt'
+[0.806s] writing manifest file '../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info/SOURCES.txt'
+[0.806s] running build
+[0.806s] running build_py
+[0.806s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build
+[0.806s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib
+[0.806s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests
+[0.806s] copying tests/test_camera.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests
+[0.806s] copying tests/test_utils.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests
+[0.806s] copying tests/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests
+[0.806s] copying tests/test_calibration.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests
+[0.807s] copying tests/test_processing.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests
+[0.807s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src
+[0.807s] copying src/main.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src
+[0.807s] copying src/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src
+[0.807s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/camera
+[0.807s] copying src/camera/camera_interface.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/camera
+[0.807s] copying src/camera/boson_camera.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/camera
+[0.807s] copying src/camera/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/camera
+[0.807s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/calibration
+[0.807s] copying src/calibration/regression.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/calibration
+[0.808s] copying src/calibration/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/calibration
+[0.808s] copying src/calibration/calibration_model.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/calibration
+[0.808s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui
+[0.808s] copying src/gui/input_dialogs.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui
+[0.808s] copying src/gui/thermal_view.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui
+[0.808s] copying src/gui/main_window.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui
+[0.808s] copying src/gui/calibration_panel.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui
+[0.808s] copying src/gui/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui
+[0.808s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/utils
+[0.808s] copying src/utils/data_manager.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/utils
+[0.808s] copying src/utils/logger.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/utils
+[0.808s] copying src/utils/config.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/utils
+[0.809s] copying src/utils/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/utils
+[0.809s] creating /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/processing
+[0.809s] copying src/processing/image_utils.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/processing
+[0.809s] copying src/processing/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/processing
+[0.809s] copying src/processing/thermal_processor.py -> /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/processing
+[0.810s] running install
+[0.810s] running install_lib
+[0.811s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests
+[0.811s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests/test_camera.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests
+[0.811s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests/test_utils.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests
+[0.811s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests
+[0.811s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests/test_calibration.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests
+[0.811s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/tests/test_processing.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests
+[0.811s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src
+[0.811s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/camera
+[0.811s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/camera/camera_interface.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/camera
+[0.811s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/camera/boson_camera.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/camera
+[0.812s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/camera/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/camera
+[0.812s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/main.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src
+[0.812s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/calibration
+[0.812s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/calibration/regression.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/calibration
+[0.812s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/calibration/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/calibration
+[0.812s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/calibration/calibration_model.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/calibration
+[0.812s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui
+[0.812s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui/input_dialogs.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui
+[0.812s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui/thermal_view.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui
+[0.812s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui/main_window.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui
+[0.813s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui/calibration_panel.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui
+[0.813s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/gui/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui
+[0.813s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src
+[0.813s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/utils
+[0.813s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/utils/data_manager.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/utils
+[0.813s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/utils/logger.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/utils
+[0.813s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/utils/config.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/utils
+[0.813s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/utils/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/utils
+[0.813s] creating /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/processing
+[0.813s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/processing/image_utils.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/processing
+[0.814s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/processing/__init__.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/processing
+[0.814s] copying /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build/lib/src/processing/thermal_processor.py -> /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/processing
+[0.814s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests/test_camera.py to test_camera.cpython-310.pyc
+[0.815s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests/test_utils.py to test_utils.cpython-310.pyc
+[0.816s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests/__init__.py to __init__.cpython-310.pyc
+[0.816s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests/test_calibration.py to test_calibration.cpython-310.pyc
+[0.817s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/tests/test_processing.py to test_processing.cpython-310.pyc
+[0.817s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/camera/camera_interface.py to camera_interface.cpython-310.pyc
+[0.818s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/camera/boson_camera.py to boson_camera.cpython-310.pyc
+[0.818s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/camera/__init__.py to __init__.cpython-310.pyc
+[0.819s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/main.py to main.cpython-310.pyc
+[0.819s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/calibration/regression.py to regression.cpython-310.pyc
+[0.820s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/calibration/__init__.py to __init__.cpython-310.pyc
+[0.820s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/calibration/calibration_model.py to calibration_model.cpython-310.pyc
+[0.822s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui/input_dialogs.py to input_dialogs.cpython-310.pyc
+[0.822s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui/thermal_view.py to thermal_view.cpython-310.pyc
+[0.824s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui/main_window.py to main_window.cpython-310.pyc
+[0.825s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui/calibration_panel.py to calibration_panel.cpython-310.pyc
+[0.826s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/gui/__init__.py to __init__.cpython-310.pyc
+[0.826s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/__init__.py to __init__.cpython-310.pyc
+[0.826s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/utils/data_manager.py to data_manager.cpython-310.pyc
+[0.827s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/utils/logger.py to logger.cpython-310.pyc
+[0.828s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/utils/config.py to config.cpython-310.pyc
+[0.828s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/utils/__init__.py to __init__.cpython-310.pyc
+[0.829s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/processing/image_utils.py to image_utils.cpython-310.pyc
+[0.830s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/processing/__init__.py to __init__.cpython-310.pyc
+[0.830s] byte-compiling /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/src/processing/thermal_processor.py to thermal_processor.cpython-310.pyc
+[0.831s] running install_egg_info
+[0.833s] Copying ../../build/thermal_calibration_tool/thermal_calibration_tool.egg-info to /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages/thermal_calibration_tool-1.0.0-py3.10.egg-info
+[0.833s] running install_scripts
+[0.852s] Installing thermal-calibration script to /home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/bin
+[0.853s] writing list of installed files to '/home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/install.log'
+[0.899s] Invoked command in '/home/dtc/airlab_ws/varunkasi_ws/src/thermal_calibration_tool' returned '0': PYTHONPATH=/home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dtc/airlab_ws/varunkasi_ws/install/thermal_calibration_tool/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/thermal_calibration_tool build --build-base /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/build install --record /home/dtc/airlab_ws/varunkasi_ws/build/thermal_calibration_tool/install.log --single-version-externally-managed

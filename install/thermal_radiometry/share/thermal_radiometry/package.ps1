@@ -114,6 +114,5 @@ colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX\share/therma
 colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX\share/thermal_radiometry/hook/pythonpath.ps1"
 colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX\share/thermal_radiometry/hook/pythonscriptspath.ps1"
 colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX\share/thermal_radiometry/hook/ament_prefix_path.ps1"
-colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX\../../build/thermal_radiometry/share/thermal_radiometry/hook/pythonpath_develop.ps1"
 
 Remove-Item Env:\COLCON_CURRENT_PREFIX

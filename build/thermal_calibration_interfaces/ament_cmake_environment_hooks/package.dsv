@@ -1,4 +1,0 @@
-source;share/thermal_calibration_interfaces/local_setup.bash
-source;share/thermal_calibration_interfaces/local_setup.dsv
-source;share/thermal_calibration_interfaces/local_setup.sh
-source;share/thermal_calibration_interfaces/local_setup.zsh
