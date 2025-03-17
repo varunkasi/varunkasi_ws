@@ -1,2 +1,5 @@
 # Ignore all files in src/thermal_radiometry/spot2-night-arm
 src/thermal_radiometry/resource/spot2-night-arm/*
+build/*
+install/*
+log/*
