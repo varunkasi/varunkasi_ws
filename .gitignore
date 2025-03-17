@@ -1,5 +1,2 @@
-# Ignore all files in src/thermal_radiometry/spot1-night-arm
-src/thermal_radiometry/spot1-night-arm/*
-
 # Ignore all files in src/thermal_radiometry/spot2-night-arm
-src/thermal_radiometry/spot2-night-arm/*
+src/thermal_radiometry/resource/spot2-night-arm/*
