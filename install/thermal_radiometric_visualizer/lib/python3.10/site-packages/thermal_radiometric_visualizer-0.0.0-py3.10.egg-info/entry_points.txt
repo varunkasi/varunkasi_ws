@@ -1,6 +1,0 @@
-[console_scripts]
-thermal_radiometric_visualizer = thermal_radiometric_visualizer.visualizer:main
-
-[rqt_gui.plugins]
-thermal_radiometric_visualizer = thermal_radiometric_visualizer.visualizer:ThermalRadiometricVisualizer
-

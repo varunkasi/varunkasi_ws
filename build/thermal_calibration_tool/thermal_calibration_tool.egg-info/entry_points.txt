@@ -1,3 +1,0 @@
-[console_scripts]
-thermal-calibration = src.main:main
-

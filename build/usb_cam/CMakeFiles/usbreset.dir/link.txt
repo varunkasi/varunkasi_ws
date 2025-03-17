@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/usbreset.dir/src/usbreset.cpp.o -o usbreset 

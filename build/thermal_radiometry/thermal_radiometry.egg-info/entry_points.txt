@@ -1,3 +1,0 @@
-[console_scripts]
-thermal_calibrator = thermal_radiometry.thermal_calibrator:main
-
